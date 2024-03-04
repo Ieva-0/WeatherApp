@@ -1,0 +1,11 @@
+.side-menu-container {
+    height: 100%;
+    background-color: orangered;
+    width: 200px;
+    ul {
+        li {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
