@@ -1,6 +1,9 @@
-<div class="side-menu-container">
-    <ul *ngFor="let city of cityList">
-        <li>
+<div class="side-menu-container" *ngIf="!menuService.isSideMenuCollapsed">
+    <div class="side-menu-header">
+        Choose a city:
+    </div>
+    <ul>
+        <li *ngFor="let city of cityList" (click)="changeCity(city)" [ngClass]="{'selected': isCitySelected(city)}">
             {{city.name}}
         </li>
     </ul>

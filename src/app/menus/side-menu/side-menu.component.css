@@ -1,11 +1,44 @@
 .side-menu-container {
     height: 100%;
-    background-color: orangered;
+    background-color: var(--side-menu-background);
+    color: var(--side-menu-text);
     width: 200px;
+    font-size: 18px;
+    font-weight: 500;
+    border-right: 1px solid var(--side-menu-border);
+
+    .side-menu-header {
+        padding: 15px;
+        background-color: var(--side-menu-header-background);
+        color: var(--side-menu-header-text);
+    }
+
     ul {
+        font-size: 16px;
+        font-weight: 400;
+        padding: 0px;
+        margin: 0px;
+        list-style-type: none;
         li {
-            text-decoration: none;
-            color: white;
+            padding: 10px 10px 10px 20px;
+            &:hover {
+                background-color: var(--side-menu-hover-background);
+                color: var(--side-menu-hover-text);
+                cursor: pointer;
+            }
+            &.selected {
+                padding-left: 12px;
+                border-left: 8px solid var(--side-menu-selected-left-border);
+                background-color: var(--side-menu-selected-background);
+                color: var(--side-menu-selected-text);
+            }
         }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .side-menu-container {
+        position: absolute;
+        z-index: 10;
     }
 }

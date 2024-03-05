@@ -1,1 +1,21 @@
-<p>weather-forecast works!</p>
+<app-top-menu></app-top-menu>
+<div class="main-container">
+    <app-side-menu></app-side-menu>
+    <div class="right-side-container">
+        <div class="forecast-options row">
+            Get forecast for:
+            <ng-select [(ngModel)]="selectedDuration" [clearable]="false" (change)="getForecastData()">
+                <ng-option *ngFor="let forecastDuration of forecastDurations"
+                    [value]="forecastDuration.length">{{forecastDuration.label}}</ng-option>
+            </ng-select>
+            <!-- <div>
+                <i class="fa fa-gear"></i>
+                Units
+            </div> -->
+        </div>
+
+        <div class="forecast">
+            <app-forecast-element *ngFor="let entry of forecastData" [forecastDataEntry]="entry"></app-forecast-element>
+        </div>
+    </div>
+</div>

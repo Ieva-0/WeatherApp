@@ -1,1 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@ng-select/ng-select/themes/default.theme.css";
+@import "../node_modules/font-awesome/css/font-awesome.css";
+@import "../node_modules/@fortawesome/fontawesome-svg-core/styles.css";
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+:root {
+    /* --primary-orange: rgb(255, 123, 0); */
+    /* --secondary-blue: rgb(0, 130, 255); */
+
+    /* top menu */
+    --top-menu-background: white;
+    --top-menu-text: black;
+    --top-menu-border: black;
+
+    /* side menu */
+    --side-menu-header-background: white;
+    --side-menu-header-text: black;
+    --side-menu-background: white;
+    --side-menu-text: black;
+    --side-menu-border: black;
+    --side-menu-hover-background: gray;
+    --side-menu-hover-text: black;
+    --side-menu-selected-background: darkgrey;
+    --side-menu-selected-text: black;
+    --side-menu-selected-left-border: red;
+
+    /* general */
+    --page-background: white;
+    --blue: #3777FF;
+    --yellow: #FFE156;
+
+    /* sizes */
+    --expanded-menu-width: 200px;
+    --top-menu-height: 80px;
+}
+
+body {
+    margin: 0px;
+    font-family: Roboto;
+}
+
+.ng-select {
+    border:0px;
+    min-height: 0px;
+    border-radius: 0;
+    width: 200px;
+}
+.ng-select .ng-select-container  {            
+    min-height: 0px;
+    border-radius: 0;
+}

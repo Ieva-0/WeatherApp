@@ -1,1 +1,18 @@
-<p>top-menu works!</p>
+<div class="top-menu-container">
+    <i class="fa fa-bars icon" (click)="toggleSideMenuCollapse()"></i>
+    <div class="top-menu-content">
+        <div class="left-side">
+            <div class="app-title">{{ appName }}</div>
+        </div>
+        <div class="right-side">
+            <div class="current-city">
+                <span class="city-text">Current city:</span><span class="city-name">{{ currentCity.name }}</span>
+                <div class="city-weather">
+                    <app-icon-element [weatherCode]="currentCityWeatherCode"></app-icon-element>
+                    <span>{{ currentCityTemperature > 0 ? '+' + currentCityTemperature.toString() :
+                        currentCityTemperature.toString() }} °C</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
