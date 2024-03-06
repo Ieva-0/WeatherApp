@@ -1,7 +1,6 @@
 # WeatherApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
-Project functionality: display weather forecast for chosen city and a specified length of time. City can be chosen in the side menu. Forecast duration can be chosen in dropdown in forecast page. Forecast element for each day can be expanded to show hourly information. 
+Project functionality: display weather forecast for chosen city and a specified length of time. City can be chosen in the side menu. Forecast duration can be chosen in dropdown in forecast page. Forecast element for each day can be expanded to show hourly information. \n This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
 
 ## Development server
 
