@@ -23,15 +23,12 @@ export class IconElementComponent implements OnInit {
 export enum Icons {
   CLOUD = 0,
   CLOUD_SUN = 1,
-  CLOUD_SUN_RAIN = 2,
-  CLOUD_RAIN = 3,
-  CLOUD_RAIN_HEAVY = 4,
-  CLOUD_MOON_RAIN = 5,
-  CLOUD_MOON = 6,
-  CLOUD_BOLT = 7,
-  SUN = 8,
-  SMOG = 9,
-  SNOW = 10,
+  CLOUD_RAIN = 2,
+  CLOUD_RAIN_HEAVY = 3,
+  CLOUD_BOLT = 4,
+  SUN = 5,
+  SMOG = 6,
+  SNOW = 7,
 }
 
 export function mapCodeToIcon(weatherCode: number): Icons {

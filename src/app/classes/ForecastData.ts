@@ -9,6 +9,7 @@ export class ForecastData {
     private _uvIndex: number;
     private _weatherCode: number;
     private _windGusts: number;
+    private _windDirection: number;
 
     public get date() {
         return this._date;
@@ -74,8 +75,16 @@ export class ForecastData {
         this._windGusts = value;
     }
 
+    public get windDirection() {
+        return this._windDirection;
+    }
+
+    public set windDirection(value: number) {
+        this._windDirection = value;
+    }
+
     
-    constructor(date: string, minTemp: number, maxTemp: number, precipitationSum: number, precipitationProbability: number, uvIndex: number, weatherCode: number, windGusts: number) {
+    constructor(date: string, minTemp: number, maxTemp: number, precipitationSum: number, precipitationProbability: number, uvIndex: number, weatherCode: number, windGusts: number, windDirection: number) {
         this._date = new Date(date);
         this._minTemp = minTemp;
         this._maxTemp = maxTemp;
@@ -84,6 +93,7 @@ export class ForecastData {
         this._uvIndex = uvIndex;
         this._weatherCode = weatherCode;
         this._windGusts = windGusts;
+        this._windDirection = windDirection;
     }
 
     public getWeekdayAbbreviation() {

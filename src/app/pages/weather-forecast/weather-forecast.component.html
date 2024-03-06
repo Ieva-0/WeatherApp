@@ -14,8 +14,25 @@
             </div> -->
         </div>
 
-        <div class="forecast">
-            <app-forecast-element *ngFor="let entry of forecastData" [forecastDataEntry]="entry"></app-forecast-element>
+        <div class="forecast" [@listAnimation]="forecastData.length" >
+            <app-forecast-element *ngFor="let entry of forecastData"  [forecastDataEntry]="entry"></app-forecast-element>
         </div>
+
     </div>
 </div>
+
+<!-- <button (click)="show = !show">toggle</button>
+<button (click)="toggleList()">toggle list</button>
+<button (click)="toggleImages()">toggle images</button>
+
+<h1 @fadeAnimation *ngIf="show">Angular Animations</h1>
+
+<ul [@listAnimation]="items.length" class="items">
+  <li *ngFor="let item of items" class="item">
+    Item {{item}}
+  </li>
+</ul>
+
+<section [@listAnimation]="images.length" class="images">
+  <img *ngFor="let img of images" [src]="img" class="image" alt="Cat" />
+</section> -->

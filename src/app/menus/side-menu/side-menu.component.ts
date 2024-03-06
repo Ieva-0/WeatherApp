@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { City } from '../../classes/City';
-import { CityService } from '../../services/city-service.service';
 import { MenuService } from '../menu-service.service';
 
 @Component({
@@ -11,28 +10,49 @@ import { MenuService } from '../menu-service.service';
 export class SideMenuComponent implements OnInit {
 
   public get cityList() {
-    return this.cityService.cityList;
+    return this.menuService.cityList;
   }
 
   public get isSideMenuCollapsed() {
     return this.menuService.isSideMenuCollapsed;
   }
 
+  public window: Window = window;
+
   constructor(
-    public cityService: CityService,
     public menuService: MenuService,
   ) { }
   
   ngOnInit() {
-    this.changeCity(this.cityService.currentCity);
+    this.changeCity(this.menuService.currentCity);
     
   }
 
   changeCity(city: City) {
-    this.cityService.changeCurrentCity(city);
+    this.menuService.changeCurrentCity(city);
+    this.menuService.isSideMenuCollapsed = true;
   }
 
   isCitySelected(city: City) {
-    return this.cityService.currentCity.name == city.name && this.cityService.currentCity.latitude == city.latitude && this.cityService.currentCity.longitude == city.longitude; 
+    return this.menuService.currentCity.name == city.name && this.menuService.currentCity.latitude == city.latitude && this.menuService.currentCity.longitude == city.longitude; 
   }
+
+  @HostListener('document:click', ['$event.target'])
+  public documentClick(event: any): void {
+    if (!this.checkIfParentObjectClassNotListed('side-menu-container', event, 0, 10) && !this.checkIfParentObjectClassNotListed('top-menu-container', event, 0, 10)) {
+      this.menuService.isSideMenuCollapsed = true;
+    }
+  }
+
+  checkIfParentObjectClassNotListed(className: string, event: any, count:number , limit: number):boolean {
+    if (event && event.classList && count <= limit) {
+      if (event.classList.contains(className)) {
+        return true;
+      } else {
+        return this.checkIfParentObjectClassNotListed(className, event.parentElement, count +1, limit);
+      }
+    }
+    return false;
+  }
+
 }

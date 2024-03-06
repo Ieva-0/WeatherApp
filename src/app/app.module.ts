@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,9 +30,10 @@ import { IconElementComponent } from './elements/icon-element/icon-element.compo
     HttpClientModule,
     NgSelectModule, 
     FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
-    HttpClientModule
+    HttpClientModule,
   ],
   bootstrap: [AppComponent]
 })

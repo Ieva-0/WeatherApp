@@ -1,5 +1,4 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { CityService } from '../../services/city-service.service';
 import { City } from '../../classes/City';
 import { MenuService } from '../menu-service.service';
 
@@ -17,19 +16,18 @@ export class TopMenuComponent {
   }
 
   public get currentCity(): City {
-    return this.cityService.currentCity;
+    return this.menuService.currentCity;
   }
 
   public get currentCityWeatherCode(): number {
-    return this.cityService.currentCityWeatherCode;
+    return this.menuService.currentCityWeatherCode;
   }
 
   public get currentCityTemperature(): number {
-    return this.cityService.currentCityTemperature;
+    return this.menuService.currentCityTemperature;
   }
 
   constructor(
-    public cityService: CityService,
     public menuService: MenuService,
   ) { }
 

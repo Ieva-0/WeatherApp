@@ -1,20 +1,21 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { CityService } from '../../services/city-service.service';
 import { WeatherForecastService } from './weather-forecast.service';
 import { ForecastDuration } from '../../classes/ForecastDuration';
 import { ForecastData } from '../../classes/ForecastData';
 import { HttpParams } from '@angular/common/http';
 import { MenuService } from '../../menus/menu-service.service';
+import { Animations } from '../../classes/Animations';
 
 @Component({
   selector: 'app-weather-forecast',
   templateUrl: './weather-forecast.component.html',
-  styleUrl: './weather-forecast.component.css'
+  styleUrl: './weather-forecast.component.css',
+  animations: [Animations.listAnimation]
 })
 export class WeatherForecastComponent implements OnInit {
 
   public get currentCity() {
-    return this.cityService.currentCity;
+    return this.menuService.currentCity;
   }
 
   public selectedDuration: number = -1;
@@ -28,7 +29,6 @@ export class WeatherForecastComponent implements OnInit {
   public forecastData: ForecastData[] = [];
 
   constructor(
-    public cityService: CityService,
     public weatherForecastService: WeatherForecastService,
     public menuService: MenuService,
   ) { }
@@ -40,7 +40,7 @@ export class WeatherForecastComponent implements OnInit {
       this.menuService.isSideMenuCollapsed = false;
     }
     this.selectedDuration = this.forecastDurations[0].length;
-    this.cityService.cityChange.subscribe((value: any) => {
+    this.menuService.cityChange.subscribe((value: any) => {
       this.getForecastData();
     });
   }
@@ -67,7 +67,8 @@ export class WeatherForecastComponent implements OnInit {
               Math.round(result.daily.precipitation_probability_max[i]), 
               result.daily.uv_index_max[i], 
               Math.round(result.daily.weather_code[i]), 
-              Math.round(result.daily.wind_gusts_10m_max[i]));
+              Math.round(result.daily.wind_gusts_10m_max[i]),
+              Math.round(result.daily.wind_direction_10m_dominant[i]));
             this.forecastData.push(entry);
           }
         }
@@ -83,6 +84,5 @@ export class WeatherForecastComponent implements OnInit {
       this.menuService.isSideMenuCollapsed = false;
     }
   }
-  
-
 }
+

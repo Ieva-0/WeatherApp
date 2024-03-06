@@ -15,30 +15,29 @@
     /* --secondary-blue: rgb(0, 130, 255); */
 
     /* top menu */
-    --top-menu-background: white;
-    --top-menu-text: black;
-    --top-menu-border: black;
+    --top-menu-background: #002200;
+    --top-menu-text: white;
+    --top-menu-border: transparent;
 
     /* side menu */
-    --side-menu-header-background: white;
-    --side-menu-header-text: black;
-    --side-menu-background: white;
+    --side-menu-header-background: #223322;
+    --side-menu-header-text: white;
+    --side-menu-background: #DDEEDD;
     --side-menu-text: black;
-    --side-menu-border: black;
-    --side-menu-hover-background: gray;
+    --side-menu-border: transparent;
+    --side-menu-hover-background: #CCEECC;
     --side-menu-hover-text: black;
-    --side-menu-selected-background: darkgrey;
+    --side-menu-selected-background: #AACCAA;
     --side-menu-selected-text: black;
-    --side-menu-selected-left-border: red;
+    --side-menu-selected-left-border: #557755;
 
     /* general */
     --page-background: white;
-    --blue: #3777FF;
-    --yellow: #FFE156;
 
     /* sizes */
     --expanded-menu-width: 200px;
     --top-menu-height: 80px;
+    --top-menu-height-phone: 60px;
 }
 
 body {
@@ -56,3 +55,5 @@ body {
     min-height: 0px;
     border-radius: 0;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

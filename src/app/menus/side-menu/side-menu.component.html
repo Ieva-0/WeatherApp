@@ -1,4 +1,4 @@
-<div class="side-menu-container" *ngIf="!menuService.isSideMenuCollapsed">
+<div class="side-menu-container" [ngClass]="{'collapsed': menuService.isSideMenuCollapsed && window.innerWidth < 700}">
     <div class="side-menu-header">
         Choose a city:
     </div>
