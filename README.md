@@ -8,7 +8,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 To run app: 
 - Clone repository to a folder (or download it as archive and extract it to a folder)
-- Run `npm install` in terminal in project directory
+- Run `npm install` in terminal in project directory (needs node.js 1.18.x+)
+- (If Angular CLI isn't installed) Run `npm install -g @angular/cli`
 - Run `ng serve` for a dev server.
 - Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
