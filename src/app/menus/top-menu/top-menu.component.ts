@@ -7,7 +7,6 @@ import { MenuService } from '../menu-service.service';
   templateUrl: './top-menu.component.html',
   styleUrl: './top-menu.component.css',
   encapsulation: ViewEncapsulation.None
-
 })
 export class TopMenuComponent {
 
@@ -32,6 +31,6 @@ export class TopMenuComponent {
   ) { }
 
   public toggleSideMenuCollapse() {
-    this.menuService.isSideMenuCollapsed = !this.menuService.isSideMenuCollapsed; 
+    this.menuService.isSideMenuCollapsed = !this.menuService.isSideMenuCollapsed;
   }
 }

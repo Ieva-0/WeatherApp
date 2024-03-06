@@ -13,17 +13,6 @@ export class MenuService {
 
   public isSideMenuCollapsed: boolean = false;
 
-  // public currentCity: string = "none";
-
-  // public cityList: Map<string, Coordinates> = new Map<string, Coordinates>([
-  //   ["New York", new Coordinates(40.7143, -74.006)],
-  //   ["Paris", new Coordinates(48.8534, 2.3488)],
-  //   ["Melbourne", new Coordinates(-37.814, 144.9633)],
-  //   ["Tokyo", new Coordinates(35.6895, 139.6917)],
-  //   ["Cape Town", new Coordinates(-33.9258, 18.4232)],
-  //   ["Vilnius", new Coordinates(54.6892, 25.2798)]
-  // ]);
-
   public currentCity: City = new City("New York", 40.7143, -74.006);
 
   public cityList: City[] = [
@@ -43,7 +32,7 @@ export class MenuService {
 
   constructor(
     public weatherForecastService: WeatherForecastService,
-  ) { 
+  ) {
     this.cityChange.subscribe((value: City) => {
       this.currentCity = value;
     });
@@ -53,13 +42,12 @@ export class MenuService {
   changeCurrentCity(city: City) {
     this.cityChange.next(city);
     let params = new HttpParams()
-    .set('latitude', this.currentCity.latitude)
-    .set('longitude', this.currentCity.longitude)
-    .set('current', 'temperature_2m,weather_code')
-    .set('timezone', 'auto');
+      .set('latitude', this.currentCity.latitude)
+      .set('longitude', this.currentCity.longitude)
+      .set('current', 'temperature_2m,weather_code')
+      .set('timezone', 'auto');
     this.weatherForecastService.getWeatherForecastData(params).subscribe((result: any) => {
-      if(result) {
-        console.log(result)
+      if (result) {
         this.currentCityWeatherCode = result.current.weather_code;
         this.currentCityTemperature = Math.round(result.current.temperature_2m);
       }

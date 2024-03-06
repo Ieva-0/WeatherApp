@@ -11,33 +11,36 @@
 
 
 :root {
-    /* --primary-orange: rgb(255, 123, 0); */
-    /* --secondary-blue: rgb(0, 130, 255); */
-
     /* top menu */
-    --top-menu-background: #002200;
+    --top-menu-background: #3a4b88;
     --top-menu-text: white;
     --top-menu-border: transparent;
 
     /* side menu */
-    --side-menu-header-background: #223322;
+    --side-menu-header-background: #212f4e;
     --side-menu-header-text: white;
-    --side-menu-background: #DDEEDD;
-    --side-menu-text: black;
+    --side-menu-background: #6074be;
+    --side-menu-text: #fff;
     --side-menu-border: transparent;
-    --side-menu-hover-background: #CCEECC;
-    --side-menu-hover-text: black;
-    --side-menu-selected-background: #AACCAA;
-    --side-menu-selected-text: black;
-    --side-menu-selected-left-border: #557755;
+    --side-menu-hover-background: #8b9bd6;
+    --side-menu-hover-text: #fff;
+    --side-menu-selected-background: #3e53a0;
+    --side-menu-selected-text: #fff;
+    --side-menu-selected-left-border: #112363;
 
     /* general */
     --page-background: white;
 
-    /* sizes */
-    --expanded-menu-width: 200px;
+    /* menu sizes */
+    --expanded-side-menu-width: 200px;
     --top-menu-height: 80px;
     --top-menu-height-phone: 60px;
+
+    /* forecast element variables */
+    --expand-btn-height-phone: 30px;
+    --element-height-wide: 80px;
+    --element-height-phone: 150px;
+    --font-icon-color: #333333F0;
 }
 
 body {
@@ -46,14 +49,23 @@ body {
 }
 
 .ng-select {
-    border:0px;
+    border: 0px;
     min-height: 0px;
     border-radius: 0;
     width: 200px;
 }
-.ng-select .ng-select-container  {            
+
+.ng-select .ng-select-container {
     min-height: 0px;
     border-radius: 0;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -10,7 +10,7 @@ import { mapCodeToIcon, Icons } from '../icon-element/icon-element.component';
 export class ForecastElementComponent implements OnInit {
 
   @Input()
-  forecastDataEntry: ForecastData = new ForecastData("", 0, 0, 0, 0, 0, 0, 0, 0);
+  forecastDataEntry: ForecastData = new ForecastData("", 0, 0, 0, 0, 0, 0, 0);
 
   public showDetails: boolean = false;
 

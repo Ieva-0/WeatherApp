@@ -54,13 +54,38 @@
                 {{ forecastDataEntry.uvIndex }}
             </div>
         </div>
-        <!-- <div class="expand-btn" (click)="toggleDetails()">
+        <div class="expand-btn" (click)="toggleDetails()">
             Details
             <i class="fa fa-angle-down" [ngClass]="{'details-expanded': showDetails}"></i>
-        </div> -->
+        </div>
 
     </div>
-    <!-- <div class="tertiary-data" [ngClass]="{'details-expanded': showDetails}">
-       
-    </div> -->
+    <div class="tertiary-data" [ngClass]="{'details-expanded': showDetails}">
+        <table class="details-table">
+            <tr>
+                <th>Hour</th>
+                <th *ngFor="let entry of forecastDataEntry.hourlyData">{{ entry.hour }}</th>    
+            </tr>
+            <tr>
+                <th>Temperature</th>
+                <td *ngFor="let entry of forecastDataEntry.hourlyData">{{ entry.temperature }} °C</td>    
+            </tr>            
+            <tr>
+                <th>Apparent Temperature</th>
+                <td *ngFor="let entry of forecastDataEntry.hourlyData">{{ entry.apparentTemp }} °C</td>    
+            </tr>            
+            <tr>
+                <th>Humidity</th>
+                <td *ngFor="let entry of forecastDataEntry.hourlyData">{{ entry.humidity }} %</td>    
+            </tr>
+            <tr>
+                <th>Precipitation Chance</th>
+                <td *ngFor="let entry of forecastDataEntry.hourlyData">{{ entry.precipitationProbability }} %</td>    
+            </tr>
+            <tr>
+                <th>Wind</th>
+                <td *ngFor="let entry of forecastDataEntry.hourlyData">{{ entry.windGusts }} m/s</td>    
+            </tr>
+        </table>
+    </div>
 </div>

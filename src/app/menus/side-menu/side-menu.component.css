@@ -1,12 +1,10 @@
 .side-menu-container {
     height: 100%;
     background-color: var(--side-menu-background);
-    /* background-image: linear-gradient(to bottom, #884488, #884422); */
     color: var(--side-menu-text);
-    width: 200px;
+    width: var(--expanded-side-menu-width);
     font-size: 18px;
     font-weight: 500;
-    /* border-right: 1px solid var(--side-menu-border); */
     transition: 0.5s;
     margin-right: 0px;
 
@@ -15,6 +13,8 @@
         background-color: var(--side-menu-header-background);
         color: var(--side-menu-header-text);
         text-wrap: nowrap;
+        white-space: nowrap;
+
     }
 
     ul {
@@ -26,6 +26,8 @@
         li {
             padding: 10px 10px 10px 20px;
             text-wrap: nowrap;
+            white-space: nowrap;
+            
             &:hover {
                 background-color: var(--side-menu-hover-background);
                 color: var(--side-menu-hover-text);
