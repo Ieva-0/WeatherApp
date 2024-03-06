@@ -58,7 +58,6 @@ export class WeatherForecastComponent implements OnInit {
         .set('wind_speed_unit', 'ms');
       this.weatherForecastService.getWeatherForecastData(params).subscribe((result: any) => {
         if (result) {
-          console.log(result)
           for (let i = 0; i < this.selectedDuration; i++) {
             let dayEntry = new ForecastData(
               result.daily.time[i],
