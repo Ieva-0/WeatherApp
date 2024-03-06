@@ -58,6 +58,7 @@ export class WeatherForecastComponent implements OnInit {
         .set('wind_speed_unit', 'ms');
       this.weatherForecastService.getWeatherForecastData(params).subscribe((result: any) => {
         if (result) {
+          console.log(result)
           for (let i = 0; i < this.selectedDuration; i++) {
             let dayEntry = new ForecastData(
               result.daily.time[i],
@@ -68,7 +69,7 @@ export class WeatherForecastComponent implements OnInit {
               Math.round(result.daily.weather_code[i]),
               Math.round(result.daily.wind_gusts_10m_max[i]),
               Math.round(result.daily.wind_direction_10m_dominant[i]));
-            for (let j = i * 24 + 1; j < i * 24 + 24; j++) {
+            for (let j = i * 24; j < i * 24 + 24; j++) {
               let hourEntry = new HourlyData(
                 result.hourly.time[j].split('T')[1],
                 Math.round(result.hourly.temperature_2m[j]),
