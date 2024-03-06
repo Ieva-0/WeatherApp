@@ -3,7 +3,9 @@
   <app-side-menu></app-side-menu>
   <div class="right-side-container">
     <div class="forecast-options">
-      Get forecast for:
+      <span>
+        Get forecast for:
+      </span>
       <ng-select [(ngModel)]="selectedDuration" [clearable]="false" [searchable]="false" (change)="getForecastData()">
         <ng-option *ngFor="let forecastDuration of forecastDurations"
           [value]="forecastDuration.length">{{forecastDuration.label}}</ng-option>
